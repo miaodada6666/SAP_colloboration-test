@@ -1,0 +1,7 @@
+db/src/gen/.hdinamespace
+db/src/gen/CATALOGSERVICE_COLLABORATIONTYPE.hdbcds
+db/src/gen/CATALOGSERVICE_STATUSPROFILE.hdbcds
+db/src/gen/MY_BOOKSHOP_COLLABORATIONTYPE.hdbcds
+db/src/gen/MY_BOOKSHOP_STATUSPROFILE.hdbcds
+srv/src/main/resources/edmx/CatalogService.xml
+srv/src/main/resources/edmx/csn.json
