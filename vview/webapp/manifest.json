@@ -15,7 +15,17 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"annotation0"
+					]
+				}
+			},
+			"annotation0": {
+				"type": "ODataAnnotation",
+				"uri": "localService/annotation0.xml",
+				"settings": {
+					"localUri": "localService/annotation0.xml"
 				}
 			}
 		},
@@ -86,6 +96,10 @@
 					},
 					"defaultBindingMode": "TwoWay"
 				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
 			}
 		},
 		"routing": {

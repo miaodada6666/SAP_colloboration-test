@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/listtest/test/flpSandbox.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "/srv_api/(.*)$",
+      "target": "$1",
+      "authenticationType": "none",
+      "destination": "srv_api",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/listtest/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}

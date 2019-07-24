@@ -47,17 +47,32 @@ modules:
      - name: uaa_Collaboration
 
 
-  - name: mmmm
+  
+
+
+  
+
+
+  
+
+
+  - name: listtest
     type: html5
-    path: mmmm
+    path: listtest
     parameters:
        disk-quota: 256M
        memory: 256M
     build-parameters:
        builder: grunt
     requires:
+     - name: srv_api
+       group: destinations
+       properties:
+          forwardAuthToken: true
+          strictSSL: false
+          name: srv_api
+          url: ~{url}
      - name: uaa_Collaboration
-     - name: dest_Collaboration
 
 resources:
   - name: Collaboration-db-hdi-container

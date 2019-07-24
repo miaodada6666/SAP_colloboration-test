@@ -1,60 +1,8 @@
 {
-  "namespace": "my.bookshop",
+  "namespace": "my.company",
   "definitions": {
     "CatalogService": {
       "kind": "service"
-    },
-    "CatalogService.Collaborationtype": {
-      "kind": "entity",
-      "@cds.persistence.name": "CATALOGSERVICE_COLLABORATIONTYPE",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "my.bookshop.CollaborationType"
-            ]
-          }
-        }
-      },
-      "elements": {
-        "ID": {
-          "@cds.persistence.name": "ID",
-          "key": true,
-          "type": "cds.String"
-        },
-        "version": {
-          "@cds.persistence.name": "VERSION",
-          "key": true,
-          "type": "cds.Integer"
-        },
-        "description": {
-          "@cds.persistence.name": "DESCRIPTION",
-          "type": "cds.String"
-        },
-        "profile": {
-          "@cds.persistence.name": "PROFILE",
-          "type": "cds.Association",
-          "target": "CatalogService.StatusProfile",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ],
-              "$generatedFieldName": "profile_ID"
-            }
-          ]
-        },
-        "state": {
-          "@cds.persistence.name": "STATE",
-          "type": "cds.Integer"
-        },
-        "profile_ID": {
-          "@cds.persistence.name": "PROFILE_ID",
-          "@odata.foreignKey4": "profile",
-          "type": "cds.String"
-        }
-      },
-      "$syntax": "projection"
     },
     "CatalogService.StatusProfile": {
       "kind": "entity",
@@ -63,7 +11,7 @@
         "SELECT": {
           "from": {
             "ref": [
-              "my.bookshop.StatusProfile"
+              "my.company.StatusProfile"
             ]
           }
         }
@@ -81,51 +29,24 @@
       },
       "$syntax": "projection"
     },
-    "my.bookshop.CollaborationType": {
-      "kind": "entity",
-      "@cds.persistence.name": "MY_BOOKSHOP_COLLABORATIONTYPE",
-      "elements": {
+    "CatalogService.setToUse": {
+      "kind": "action",
+      "params": {
         "ID": {
+          "kind": "param",
           "@cds.persistence.name": "ID",
-          "key": true,
           "type": "cds.String"
-        },
-        "version": {
-          "@cds.persistence.name": "VERSION",
-          "key": true,
-          "type": "cds.Integer"
         },
         "description": {
+          "kind": "param",
           "@cds.persistence.name": "DESCRIPTION",
-          "type": "cds.String"
-        },
-        "profile": {
-          "@cds.persistence.name": "PROFILE",
-          "type": "cds.Association",
-          "target": "my.bookshop.StatusProfile",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ],
-              "$generatedFieldName": "profile_ID"
-            }
-          ]
-        },
-        "state": {
-          "@cds.persistence.name": "STATE",
-          "type": "cds.Integer"
-        },
-        "profile_ID": {
-          "@cds.persistence.name": "PROFILE_ID",
-          "@odata.foreignKey4": "profile",
           "type": "cds.String"
         }
       }
     },
-    "my.bookshop.StatusProfile": {
+    "my.company.StatusProfile": {
       "kind": "entity",
-      "@cds.persistence.name": "MY_BOOKSHOP_STATUSPROFILE",
+      "@cds.persistence.name": "MY_COMPANY_STATUSPROFILE",
       "elements": {
         "ID": {
           "@cds.persistence.name": "ID",
